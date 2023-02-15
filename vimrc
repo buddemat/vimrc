@@ -60,3 +60,36 @@ set display=lastline
 
 " minimum number of lines to kept above/below cursor when scrolling
 set scrolloff=3
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Editing
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" enables automatic indentation as you type
+filetype indent on
+
+" indent at same level as previous line
+set autoindent
+
+" indents of 4 spaces
+set shiftwidth=4
+
+" try guessing the right indentation
+set smartindent
+
+" set tab character to 4 characters
+set tabstop=4 
+
+" turn tabs into whitespace
+set expandtab 
+
+" allow backspacing over auto indent, over line breaks and over the start of
+" current insert
+set backspace=indent,eol,start
+
+" when a bracket is inserted, briefly jump to corresponding one
+set showmatch
+
+" let the cursor stray beyond the defined text in visual block mode 
+set virtualedit=block
