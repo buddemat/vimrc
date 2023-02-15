@@ -9,4 +9,10 @@ set number
 
 " colorscheme
 set background=dark
-colorscheme peaksea
+
+
+try
+    colorscheme solarized
+catch /^Vim\%((\a\+)\)\=:E185/
+    colorscheme desert
+endtry
