@@ -63,6 +63,49 @@ set scrolloff=3
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Status bar
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+ 
+" command bar height
+set cmdheight=2
+
+" always show status line
+set laststatus=2
+
+" Automated wordcount addition, taken from 
+" http://stackoverflow.com/questions/114431/fast-word-count-function-in-vim
+function! WordCount()
+   let s:old_status = v:statusmsg
+   let position = getpos(".")
+   exe ":silent normal g\<c-g>"
+   let stat = v:statusmsg
+   let s:word_count = 0
+   if stat != '--No lines in buffer--'
+     let s:word_count = str2nr(split(v:statusmsg)[11])
+     let v:statusmsg = s:old_status
+   end
+   call setpos('.', position)
+   return s:word_count 
+endfunction
+
+" Set statusline, shown here a piece at a time
+highlight User1 ctermbg=darkgrey guibg=darkgrey ctermfg=black guifg=black
+set statusline=%1*                                          " Switch to User1 color highlight
+set statusline+=%<%F                                        " file name, cut if needed at start
+set statusline+=\ [%{&ff}:                                    " [fileformat
+set statusline+=%{&fileencoding?&fileencoding:&encoding}:   " filenecoding
+set statusline+=%Y]		                                    " file type
+set statusline+=%M                                          " modified flag
+set statusline+=%=                                          " separator from left to right justified
+set statusline+=\ %{WordCount()}\ words,                    " word count
+"set statusline+=\ col:%3c                                  " column number, padded to 3 digits
+set statusline+=\ %4l/%4L\ lines,\ %P	                    " lines, padded to 4 digits, percentage through the file
+
+" show partial commands in status line
+set showcmd
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Editing
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
