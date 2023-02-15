@@ -14,5 +14,5 @@ set background=dark
 try
     colorscheme solarized
 catch /^Vim\%((\a\+)\)\=:E185/
-    colorscheme desert
+    colorscheme torte
 endtry
