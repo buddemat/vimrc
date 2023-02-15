@@ -7,6 +7,34 @@
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Setup / init
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" prevent vim from limiting its behaviour to that of the original vi
+" because it has side effects, this line must be the first one.
+set nocompatible
+
+" automatically detect file types
+filetype plugin on
+
+" no modeline allowed for security reasons
+set nomodeline
+
+" enable syntax highlighting
+syntax on
+
+" enable mouse support in all modes
+set mouse=a
+
+" encoding
+set encoding=utf-8
+setglobal fileencoding=utf-8
+
+" do not keep a backup file
+set nobackup
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Appearance
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
