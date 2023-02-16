@@ -13,6 +13,10 @@ call plug#begin()
 " colorscheme onehalf (https://github.com/sonph/onehalf/tree/master/vim)
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
+" fzf (https://github.com/junegunn/fzf.vim)
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
 call plug#end()
