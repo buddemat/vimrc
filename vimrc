@@ -44,7 +44,7 @@ set numberwidth=5
 
 " colorscheme
 try
-    colorscheme solarized
+    colorscheme onehalfdark
 catch
     colorscheme desert
 endtry
