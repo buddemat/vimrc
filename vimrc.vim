@@ -137,6 +137,10 @@ set showmatch
 " let the cursor stray beyond the defined text in visual block mode 
 set virtualedit=block
 
+" search incrementally, case-sensitive only when searchterm has uppercase
+set ignorecase
+set smartcase
+set incsearch
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Programming
