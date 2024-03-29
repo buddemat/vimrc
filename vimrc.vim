@@ -136,3 +136,12 @@ set showmatch
 
 " let the cursor stray beyond the defined text in visual block mode 
 set virtualedit=block
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Programming
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" execute python script on F9
+autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
