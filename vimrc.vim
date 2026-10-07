@@ -145,6 +145,8 @@ set incsearch
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Programming
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" treat any file starting with Dockerfile or ending in .dockerfile as such for highlighting
+autocmd BufNewFile,BufRead Dockerfile*,*.dockerfile set filetype=dockerfile
 
 " execute python script on F9
 autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
